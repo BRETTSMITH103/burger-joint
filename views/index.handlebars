@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="burger-list">
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          <div class="burger-div">
+            <li class="not-eaten">{{this.id}}. {{this.burger_name}}</li>
+            <button class="devour-button" method="submit" name="devoured" data-id="{{this.id}}">Devour it</button>
+          </div>
+          <br>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{this.id}}. {{this.burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
